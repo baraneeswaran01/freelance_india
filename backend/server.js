@@ -16,7 +16,7 @@ app.use("/api/v1",freelancer)
 
 
 app.use(errorMiddleware)
-const server=app.listen(process.env.PORT, () => {
+const server=app.listen(process.env.PORT || 8000, () => {
   console.log(
     `server listening to the port : ${process.env.PORT} in ${process.env.NODE_ENV}`
   );
