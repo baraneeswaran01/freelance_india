@@ -5,7 +5,7 @@ const connectDatabase = () => {
     const uri =process.env.DATABASE_LOCAL_URI ;
     if (!uri) {
       console.error('MongoDB URI is not defined. Please set MONGODB_URI in your environment variables.');
-      process.exit(1);
+      process.exit(1)
     }
 
 
