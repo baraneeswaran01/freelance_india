@@ -26,66 +26,6 @@ exports.freelancerRegister= catchAsyncError(async (req, res) => {
 
 });
 
-// DELETE /api/v1/client/:id
-exports.deleteFreelancer = catchAsyncError(async (req, res) => {
-    const { id } = req.params;
-    const freelancer = await Freelancer.findByIdAndDelete(id);
-  
-    if (!freelancer) {
-      return res.status(404).json({
-        success: false,
-        message: 'Freelancer not found'
-      });
-    }
-  
-    res.json({
-      success: true,
-      message: 'Freelancer deleted successfully'
-    });
-  });
-
-  
-// PUT /api/v1/client/:id
-exports.updateFreelancer = catchAsyncError(async (req, res) => {
-    const { id } = req.params;
-    const updatedFreelancer = await Freelancer.findByIdAndUpdate(id, req.body, {
-      new: true, // Return the updated document
-      runValidators: true // Run Mongoose validators
-    });
-  
-    if (!updatedFreelancer) {
-      return res.status(404).json({
-        success: false,
-        message: 'Freelancer not found'
-      });
-    }
-  
-    res.json({
-      success: true,
-      updatedFreelancer
-    });
-  });
-
-
-// GET /api/v1/client/:id
-exports.getFreelancerById = catchAsyncError(async (req, res) => {
-    const { id } = req.params;
-    const freelancer = await Freelancer.findById(id);
-  
-    if (!freelancer) {
-      return res.status(404).json({
-        success: false,
-        message: 'Freelancer not found'
-      });
-    }
-  
-    res.json({
-      success: true,
-      freelancer
-    });
-  });
-  
-
 
 
 
