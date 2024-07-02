@@ -17,10 +17,10 @@ const clientSchema = new mongoose.Schema({
       message: "Please enter a valid email address"
     }
   },
-  password:{
-type:String,
-required:[true,"plaese enter password"]
-  },
+//   password:{
+// type:String,
+// required:[true,"plaese enter password"]
+//   },
   experience: {
     type: Number,
     required: true
